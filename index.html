@@ -218,6 +218,10 @@ footer{
             Landon Shirley
         </div>
 
+        <div class="hamburger" onclick="toggleMenu()">
+            ☰
+        </div>
+
         <div class="nav-links">
             <a href="#projects">Projects</a>
             <a href="#skills">Skills</a>
@@ -390,6 +394,13 @@ footer{
     </p>
 
 </footer>
-
+<script>
+function toggleMenu() {
+    document
+        .getElementById("navLinks")
+        .classList
+        .toggle("show");
+}
+</script>
 </body>
 </html>
