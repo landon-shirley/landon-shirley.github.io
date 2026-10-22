@@ -4,9 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Landon Shirley | AI Engineer & Operations Technology</title>
+<title>Landon Shirley | AI Engineering & Operations Technology</title>
 
 <style>
+
+:root{
+    --bg:#07140d;
+    --surface:#0f2418;
+    --card:#143021;
+    --border:#214d34;
+    --primary:#00d26a;
+    --accent:#35ff92;
+    --text:#eafcf2;
+    --muted:#9bc8ad;
+}
 
 *{
     margin:0;
@@ -20,8 +31,8 @@ html{
 
 body{
     font-family:Segoe UI, Arial, sans-serif;
-    background:#0f172a;
-    color:#e2e8f0;
+    background:var(--bg);
+    color:var(--text);
     line-height:1.6;
 }
 
@@ -31,52 +42,64 @@ body{
     margin:auto;
 }
 
-/* ---------- NAVBAR ---------- */
+/* ======================
+   NAVBAR
+====================== */
 
 .navbar{
     position:sticky;
     top:0;
-    background:rgba(15,23,42,.95);
-    backdrop-filter:blur(12px);
-    border-bottom:1px solid #334155;
     z-index:1000;
+    background:rgba(7,20,13,.97);
+    border-bottom:1px solid var(--border);
+    backdrop-filter:blur(10px);
 }
 
-.nav-container{
+.nav-inner{
     max-width:1200px;
     margin:auto;
-    padding:18px 20px;
 
     display:flex;
     justify-content:space-between;
     align-items:center;
+
+    padding:18px 20px;
 }
 
 .logo{
-    color:#38bdf8;
+    color:var(--primary);
     font-size:1.2rem;
     font-weight:700;
 }
 
 .nav-links{
     display:flex;
-    gap:25px;
+    gap:24px;
 }
 
 .nav-links a{
     text-decoration:none;
-    color:#e2e8f0;
+    color:var(--text);
     transition:.3s;
 }
 
 .nav-links a:hover{
-    color:#38bdf8;
+    color:var(--primary);
 }
 
-/* ---------- HERO ---------- */
+.hamburger{
+    display:none;
+    cursor:pointer;
+    font-size:28px;
+    color:var(--text);
+}
+
+/* ======================
+   HERO
+====================== */
 
 .hero{
-    min-height:80vh;
+    min-height:85vh;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -85,123 +108,186 @@ body{
 
 .hero h1{
     font-size:4rem;
-    margin-bottom:10px;
+    margin-bottom:12px;
 }
 
 .hero h2{
-    color:#38bdf8;
+    color:var(--primary);
     font-weight:400;
-    margin-bottom:25px;
+    margin-bottom:24px;
 }
 
 .hero p{
-    max-width:750px;
+    max-width:800px;
     margin:auto;
+    color:var(--muted);
     font-size:1.1rem;
 }
 
-.buttons{
-    margin-top:35px;
+.hero-buttons{
+    margin-top:40px;
 }
 
 .btn{
     display:inline-block;
     padding:14px 26px;
-    border-radius:8px;
     text-decoration:none;
+    border-radius:8px;
     margin:8px;
-    font-weight:bold;
+    font-weight:700;
 }
 
 .btn-primary{
-    background:#38bdf8;
-    color:#0f172a;
+    background:var(--primary);
+    color:#000;
 }
 
 .btn-secondary{
-    border:1px solid #38bdf8;
-    color:#38bdf8;
+    color:var(--primary);
+    border:1px solid var(--primary);
 }
 
-/* ---------- SECTIONS ---------- */
+/* ======================
+   SECTIONS
+====================== */
 
 section{
-    padding:80px 0;
+    padding:90px 0;
 }
 
 .section-title{
     text-align:center;
+    font-size:2.3rem;
     margin-bottom:40px;
-    font-size:2.2rem;
 }
+
+/* ======================
+   METRICS
+====================== */
+
+.metrics{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.metric{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:12px;
+    text-align:center;
+    padding:30px;
+}
+
+.metric-number{
+    color:var(--primary);
+    font-size:2.5rem;
+    font-weight:bold;
+}
+
+/* ======================
+   CARDS
+====================== */
 
 .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:24px;
 }
 
 .card{
-    background:#1e293b;
-    padding:25px;
+    background:var(--card);
+    border:1px solid var(--border);
     border-radius:12px;
-    border:1px solid #334155;
+    padding:28px;
 }
 
 .card h3{
-    color:#38bdf8;
-    margin-bottom:15px;
+    color:var(--accent);
+    margin-bottom:14px;
 }
+
+.card p{
+    color:var(--muted);
+}
+
+/* ======================
+   SKILLS
+====================== */
 
 .skills{
     display:flex;
+    justify-content:center;
     flex-wrap:wrap;
     gap:12px;
-    justify-content:center;
 }
 
 .skill{
-    background:#1e293b;
     padding:10px 16px;
     border-radius:20px;
-    border:1px solid #334155;
+    background:var(--surface);
+    border:1px solid var(--border);
 }
 
-.highlight{
-    background:#1e293b;
-    padding:35px;
+/* ======================
+   PANELS
+====================== */
+
+.panel{
+    background:var(--surface);
+    border:1px solid var(--border);
     border-radius:12px;
-    border:1px solid #334155;
-    text-align:center;
+    padding:40px;
 }
+
+.panel p{
+    color:var(--muted);
+}
+
+/* ======================
+   FOOTER
+====================== */
 
 footer{
-    border-top:1px solid #334155;
+    border-top:1px solid var(--border);
+    padding:40px;
     text-align:center;
-    padding:40px 20px;
-    margin-top:50px;
+    color:var(--muted);
 }
 
-/* ---------- MOBILE ---------- */
+/* ======================
+   MOBILE
+====================== */
 
-@media(max-width:768px){
-
-    .nav-container{
-        flex-direction:column;
-        gap:15px;
-    }
-
-    .nav-links{
-        flex-wrap:wrap;
-        justify-content:center;
-    }
+@media (max-width:768px){
 
     .hero h1{
         font-size:2.5rem;
     }
 
-    .hero h2{
-        font-size:1.2rem;
+    .hamburger{
+        display:block;
+    }
+
+    .nav-links{
+        display:none;
+
+        position:absolute;
+        top:70px;
+        left:0;
+        right:0;
+
+        background:var(--surface);
+
+        flex-direction:column;
+        text-align:center;
+        padding:20px;
+
+        border-bottom:1px solid var(--border);
+    }
+
+    .nav-links.show{
+        display:flex;
     }
 }
 
@@ -212,20 +298,20 @@ footer{
 
 <nav class="navbar">
 
-    <div class="nav-container">
+    <div class="nav-inner">
 
         <div class="logo">
-            Landon Shirley
+            LANDON SHIRLEY
         </div>
 
         <div class="hamburger" onclick="toggleMenu()">
             ☰
         </div>
 
-        <div class="nav-links">
+        <div class="nav-links" id="navLinks">
             <a href="#projects">Projects</a>
             <a href="#skills">Skills</a>
-            <a href="#focus">Current Focus</a>
+            <a href="#roadmap">Roadmap</a>
             <a href="#contact">Contact</a>
         </div>
 
@@ -246,23 +332,24 @@ footer{
             </h2>
 
             <p>
-                Building intelligent operational systems, cloud-native
-                applications, and AI-powered automation platforms focused on
-                decision support, analytics, and business performance.
+                Designing AI-powered operational intelligence systems
+                that transform business data into actionable decisions,
+                automate workflows, and create measurable operational
+                visibility.
             </p>
 
-            <div class="buttons">
+            <div class="hero-buttons">
 
                 <a
-                    class="btn btn-primary"
                     href="https://github.com/landon-shirley"
+                    class="btn btn-primary"
                     target="_blank">
                     GitHub
                 </a>
 
                 <a
-                    class="btn btn-secondary"
                     href="https://github.com/landon-shirley/Invie"
+                    class="btn btn-secondary"
                     target="_blank">
                     View Invie
                 </a>
@@ -273,9 +360,39 @@ footer{
 
     </section>
 
+    <section>
+
+        <div class="metrics">
+
+            <div class="metric">
+                <div class="metric-number">3</div>
+                <p>Major Projects</p>
+            </div>
+
+            <div class="metric">
+                <div class="metric-number">6+</div>
+                <p>Operational Agents</p>
+            </div>
+
+            <div class="metric">
+                <div class="metric-number">20+</div>
+                <p>API Endpoints</p>
+            </div>
+
+            <div class="metric">
+                <div class="metric-number">Azure</div>
+                <p>AI Foundry</p>
+            </div>
+
+        </div>
+
+    </section>
+
     <section id="projects">
 
-        <h2 class="section-title">Featured Projects</h2>
+        <h2 class="section-title">
+            Featured Projects
+        </h2>
 
         <div class="cards">
 
@@ -284,11 +401,11 @@ footer{
                 <h3>🚀 Invie</h3>
 
                 <p>
-                    Multi-agent operations platform built with FastAPI,
-                    forecasting, inventory management, anomaly detection,
-                    governance workflows, operational analytics,
-                    observability, and an Operations Director orchestration
-                    layer.
+                    Multi-agent operations intelligence platform
+                    featuring inventory, forecasting, anomaly
+                    detection, governance workflows, operational
+                    analytics, observability, and an Operations
+                    Director orchestration layer.
                 </p>
 
             </div>
@@ -298,22 +415,22 @@ footer{
                 <h3>🤖 EchoBot</h3>
 
                 <p>
-                    Azure AI Foundry chatbot initiative utilizing GPT-4.1-mini.
-                    Designed as an expandable conversational AI platform
-                    capable of future integration with business operations
-                    systems.
+                    Enterprise chatbot initiative built on Azure
+                    AI Foundry and GPT-4.1-mini with a roadmap
+                    toward operational assistance and intelligent
+                    workflow automation.
                 </p>
 
             </div>
 
             <div class="card">
 
-                <h3>🛰 Legacy MVP Projects</h3>
+                <h3>🛰 Legacy MVP Systems</h3>
 
                 <p>
-                    Early backend systems, inventory tooling, and API
-                    experiments that evolved into the architecture and design
-                    principles currently used throughout Invie.
+                    Foundational backend and inventory projects
+                    that evolved into the modern Invie
+                    architecture and operational platform.
                 </p>
 
             </div>
@@ -324,7 +441,9 @@ footer{
 
     <section id="skills">
 
-        <h2 class="section-title">Technical Skills</h2>
+        <h2 class="section-title">
+            Technical Skills
+        </h2>
 
         <div class="skills">
 
@@ -334,29 +453,59 @@ footer{
             <div class="skill">SQLite</div>
             <div class="skill">Azure</div>
             <div class="skill">Azure AI Foundry</div>
+            <div class="skill">REST APIs</div>
             <div class="skill">Git</div>
             <div class="skill">GitHub</div>
-            <div class="skill">REST APIs</div>
-            <div class="skill">Agentic Systems</div>
             <div class="skill">Automation</div>
-            <div class="skill">Operations Analytics</div>
+            <div class="skill">Agentic Systems</div>
+            <div class="skill">Operational Analytics</div>
 
         </div>
 
     </section>
 
-    <section id="focus">
+    <section>
 
-        <h2 class="section-title">Current Focus</h2>
+        <h2 class="section-title">
+            Current Focus
+        </h2>
 
-        <div class="highlight">
+        <div class="panel">
 
             <p>
-                Currently expanding Invie into a full operational intelligence
-                platform featuring agent orchestration, governance controls,
-                health scoring, executive dashboards, and AI-assisted decision
-                support capabilities.
+                Expanding Invie into a comprehensive operational
+                intelligence platform with scorecards,
+                observability, executive dashboards,
+                governance controls, and AI-assisted
+                decision support.
             </p>
+
+        </div>
+
+    </section>
+
+    <section id="roadmap">
+
+        <h2 class="section-title">
+            Roadmap
+        </h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Azure Deployment</h3>
+                <p>Deploy Invie to Azure App Service.</p>
+            </div>
+
+            <div class="card">
+                <h3>Executive Dashboard</h3>
+                <p>Operational scorecards and health monitoring.</p>
+            </div>
+
+            <div class="card">
+                <h3>AI Director</h3>
+                <p>LLM-assisted operational recommendations and analysis.</p>
+            </div>
 
         </div>
 
@@ -364,20 +513,23 @@ footer{
 
     <section id="contact">
 
-        <h2 class="section-title">Connect</h2>
+        <h2 class="section-title">
+            Connect
+        </h2>
 
-        <div class="highlight">
+        <div class="panel">
 
             <p>
-                Follow project development and source code on GitHub.
+                Follow development progress, source code, and upcoming
+                Azure deployments through GitHub.
             </p>
 
-            <br>
+            <br><br>
 
             <a
-                class="btn btn-primary"
                 href="https://github.com/landon-shirley"
-                target="_blank">
+                target="_blank"
+                class="btn btn-primary">
                 Visit GitHub
             </a>
 
@@ -389,18 +541,20 @@ footer{
 
 <footer>
 
-    <p>
-        © 2026 Landon Shirley • AI Engineering & Operations Technology
-    </p>
+    © 2026 Landon Shirley • AI Engineering & Operations Technology
 
 </footer>
+
 <script>
+
 function toggleMenu() {
     document
-        .getElementById("navLinks")
+        .getElementById('navLinks')
         .classList
-        .toggle("show");
+        .toggle('show');
 }
+
 </script>
+
 </body>
 </html>
